@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  ghost:
+    image: ghost:latest
+    restart: always
+    ports:
+      - 8080:2368
+    environment:
+      database__client: mysql
+      database__connection__host: 
+      database__connection__user: 
+      database__connection__password: ""
+      database__connection__database: 
+      url: ''
+    volumes:
+      - './ghost_dir:/var/lib/ghost/content'
+    depends_on:
+      db:
+        condition: service_healthy
+  django:
+    build: django_app
+    restart: always
+    ports:
+      - 8081:8000
+    volumes:
+      - './django_app:/app'
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: 
+      MYSQL_USER: 
+      MYSQL_PASSWORD: ""    
+      MYSQL_ROOT_PASSWORD: ""
+    volumes:
+      - './mysql_dir:/var/lib/mysql'
+    healthcheck:
+      test: ["CMD", "sleep", "1"]
