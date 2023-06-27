@@ -9,4 +9,4 @@ We welcome any improvements or ideas that can enhance the project.
 <br><br>
 **Contact**
 <br><br>
-For any inquiries or questions, please don't hesitate to reach out to us. You can contact us at sakurasou.com.br.
+For any inquiries or questions, please don't hesitate to reach out to us. You can contact us at solanin.com.br.
