@@ -1,4 +1,4 @@
-**Docker-Sakurasou-Config**
+**Docker-Sakurasou-Config - Deprecated**
 <br><br>
 This repository showcases an example of how the sakurasou projects is implemented in a VPS using Docker Compose.
 <br><br>
